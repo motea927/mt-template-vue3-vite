@@ -1,0 +1,25 @@
+@import './normalize.scss';
+
+/* setup viewport */
+html {
+  background: #fff;
+  font-size: 100px;
+  scroll-behavior: smooth;
+
+  @include queryMaxWidth($queryLG) {
+    font-size: calc(100vw / #{$queryLG} * 100);
+  }
+  @include queryMaxWidth($querySM) {
+    font-size: calc(100vw / #{$querySM} * 100);
+  }
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
