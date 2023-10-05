@@ -48,7 +48,7 @@ const debounce = <F extends (...params: any[]) => void>(
   delay: number,
   immediate = false
 ) => {
-  let timerID = 0
+  let timerID: number | NodeJS.Timeout = 0
 
   return function (this: any, ...args: any[]) {
     clearTimeout(timerID)
